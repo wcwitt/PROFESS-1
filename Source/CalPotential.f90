@@ -157,6 +157,17 @@ SUBROUTINE CalculatePotentialPlus(rho, optSqrt, potential, eTable)
     CALL CalculateKEDFPotPlus(rhoReal_SI)
   ENDIF
 
+  ! HACK TO PRINT POTENTIAL
+  open(unit=11, file='dEdX')
+  write(11,*) shape(potential)
+  write(11,'(e25.10)') potential ! print dE/d(phi)
+  close(11)
+  open(unit=11, file='potential')
+  write(11,*) shape(potential)
+  write(11,'(e25.10)') potential / (2.0_dp*sqrt(rho)) ! print total potential
+  close(11)
+  ! END OF HACK
+
   ! energy term
   IF (calcEnergy) THEN
     CALL CalculateEnergy

@@ -1,0 +1,9 @@
+ecut 600
+kine WGC 
+exch lda
+
+rhof density # file for input density
+meth non # single-point calculation (no minimization)
+
+prin for sam # print forces
+

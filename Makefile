@@ -34,7 +34,7 @@ ifeq ($(MACHINE),x86_64)
 # (Make sure you use the same compiler for PROFESS and FFTW3)
 #--------------------------------------------------------------------------------
 
-  #FFTW_DIR=/home/your_fftw3_directory/
+  FFTW_DIR=/usr/local/fftw/gcc/3.3.4/
 
 #--------------------------------------------------------------------------------
 # SHORT NOTE FOR LIBXC PACKAGE INSTALLATION:
@@ -52,7 +52,7 @@ ifeq ($(MACHINE),x86_64)
 # (Make sure you use the same compiler for PROFESS and Libxc)
 #----------------------------------------------------------------------------------
  
-#  XC_DIR=/home/your_libxc_directory/
+  XC_DIR=/home/EAC/libxc_gnu/libxc-3.0.0_install/
 
 #--------------------------------------------------------------------------------
 # SHORT NOTE FOR LAPACK PACKAGE INSTALLATION:
@@ -82,7 +82,7 @@ ifeq ($(MACHINE),x86_64)
 # (Make sure you use the same compiler for PROFESS and LAPACK)
 #----------------------------------------------------------------------------------
 
-  #LAPACK_DIR=/home/your_lapack_directory/
+  LAPACK_DIR=/usr/local/lapack/
 
 #----------------------------------------------------------------------------------
 # For gnu compiler (tested under version 4.4.7) 
@@ -102,7 +102,7 @@ ifeq ($(MACHINE),x86_64)
   # LDLIBS flag
   #---------------------
   # for those who want to use compiled LAPACK, Libxc and FFTW3 packages.
-  LDLIBS = -L${LAPACK_DIR} -llapack -lrefblas -L${XC_DIR}/lib/ -lxcf90 -lxc -L${FFTW_DIR}/lib -lfftw3 -lm 
+  LDLIBS = -L${LAPACK_DIR} -llapack -lblas -L${XC_DIR}/lib/ -lxcf90 -lxc -L${FFTW_DIR}/lib64 -lfftw3 -lm 
 
 
 #----------------------------------------------------------------------------------
